@@ -3,14 +3,14 @@ import './todo-add.css'
 import marked from 'marked'
 
 export class TodoAdd extends Component {
-  state = { title: 'Some title', text: '## Some desc \n* a n \n* b' }
+  state = { title: 'Some title', text: '## Some description \n* item1 \n* item2' }
 
   handleTitleChange = ({ target: { value } }) => this.setState({ title: value })
   handleChange = ({ target: { value } }) => this.setState({ text: value })
 
   addTodo = () => {
     this.props.addTodo(this.state.title, this.state.text)
-    this.setState({ value: '' })
+    this.setState({ title: '', text: '' })
   }
 
   render() {
